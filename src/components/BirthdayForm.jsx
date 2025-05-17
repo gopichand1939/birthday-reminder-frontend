@@ -54,7 +54,7 @@ const BirthdayForm = ({ onAddBirthday }) => {
     const sendAt = `${form.sendAtYear}-${String(form.sendAtMonth).padStart(2, "0")}-${String(form.sendAtDay).padStart(2, "0")}T${String(form.sendAtHour).padStart(2, "0")}:${String(form.sendAtMinute).padStart(2, "0")}`;
 
     try {
-      const res = await axios.post("http://localhost:5000/api/birthday", {
+const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/birthday`, {
         name: form.name,
         email: form.email,
         dob,
